@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>VOCÊ CLICOU</Text>
-      <Text style={styles.text}>{contador}</Text>
+      <Text style={{fontSize:200, marginBottom:250}}>{contador}</Text>
 
       <TouchableHighlight
         style={styles.button}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 50,
-    marginBottom:100,
+    marginBottom:20,
     
   }
 
