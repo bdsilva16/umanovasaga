@@ -1,11 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 export default function App() {
+  const [contador, setContador] = useState(0);
+
+  const handlePress = () => {
+    setContador(contador + 1);
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.text}>VOCÊ CLICOU</Text>
+      <Text style={styles.text}>{contador}</Text>
+
+      <TouchableHighlight
+        style={styles.button}
+        onPress={handlePress}
+      >
+        <Text >Clique aqui!!!</Text>
+      </TouchableHighlight>
     </View>
   );
 }
@@ -13,8 +26,30 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'yellow',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 6,
+    backgroundColor: '#fff',
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    position: 'absolute',
+    bottom: 50,
+    borderColor: 'red',
+    borderWidth: 2,
+  },
+
+  text: {
+    fontSize: 50,
+    marginBottom:100,
+    
+  }
+
+
 });
